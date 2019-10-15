@@ -1,6 +1,8 @@
 # A partir d'une grille donnée, écrivez la fonction qui indique si un sudoku est gagnant ou pas
 # (ie, tous les nombres de 1 à 9 apparaissent une fois sur la ligne et sur la colonne)
 
+# La résolution ci dessous se fait de manière naive en testant à successivement les lignes, les colonnes et les blocs
+
 sudokuValide = [
     [7, 1, 3, 8, 2, 4, 6, 5, 9],
     [2, 6, 9, 1, 7, 5, 3, 8, 4],
@@ -64,33 +66,52 @@ def bloc_to_tableau(grille, x, y):
             tableau.append(grille[i][j])
     return tableau
 
+
 def tester_ligne(grille):
     estValide = True
-    for i in range(0, 9):
+    i  = 0
+    while(estValide and i < 9):
         if(not tester_tableau(grille[i])):
             estValide = False
+        i += 1
     return estValide
+
+
 def tester_colonne(grille):
     estValide = True
-    for i in range(0, 9):
+    i = 0
+    while(estValide and i < 9):
         tableau = colonne_to_tableau(grille, i)
         if(not tester_tableau(tableau)):
             estValide = False
+        i += 1
     return estValide
+
 
 def tester_bloc(grille):
     estValide = True
-    for i in range(0,9,3):
+    i = 0
+    while(estValide and i < 9):
         j = 0
-        for j in range(0,9,3):
-            tableau = bloc_to_tableau(grille,i,j)
-            print(str(tableau) + str(i) + str(j))
+        while(estValide and j < 9):
+            tableau = bloc_to_tableau(grille, i, j)
             if(not tester_tableau(tableau)):
                 estValide = False
+            j += 3
+        i += 3
     return estValide
 
+
 def tester_sudoku(sudoku):
-    return tester_ligne(sudoku) or tester_colonne(sudoku) or tester_bloc(sudoku)
+    estValide = True
+    if(not tester_ligne(sudoku)):
+        estValide = False
+    elif(not tester_colonne(sudoku)):
+        estValide = False
+    elif(not tester_bloc(sudoku)):
+        estValide = False
+
+    return estValide
 
 
-print(tester_sudoku(sudokuFaux))
+print(tester_sudoku(sudokuValide))
