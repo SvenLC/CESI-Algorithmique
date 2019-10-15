@@ -5,7 +5,7 @@
 exemple = [3, 4, 5, 1, 5, 6, 9, 7]
 
 
-def calculMini(tableau):
+def calcul_mini(tableau):
     mini = tableau[0]
     for element in tableau:
         if(mini > element):
@@ -13,7 +13,7 @@ def calculMini(tableau):
     return mini
 
 
-def calculMaxi(tableau):
+def calcul_maxi(tableau):
     maxi = tableau[0]
     for element in tableau:
         if(maxi < element):
@@ -21,8 +21,8 @@ def calculMaxi(tableau):
     return maxi
 
 
-def calculEcart(tableau):
-    return calculMaxi(tableau) - calculMini(tableau)
+def calcul_ecart(tableau):
+    return calcul_maxi(tableau) - calcul_mini(tableau)
 
 
-print(calculEcart(exemple))
+print(calcul_ecart(exemple))

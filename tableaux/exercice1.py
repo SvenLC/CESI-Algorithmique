@@ -2,10 +2,12 @@
 
 voyelle = 'AEIOUY'
 
-def remplirTableau():
+
+def remplir_tableau():
     tableau = []
     for i in range(0, len(voyelle)):
-        tableau.append(voyelle[i])    
+        tableau.append(voyelle[i])
     return tableau
 
-print(remplirTableau())
+
+print(remplir_tableau())

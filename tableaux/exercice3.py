@@ -3,7 +3,7 @@
 exemple = [3, 4, 5, 1, 5, 6, 9, 7]
 
 
-def calculNombreOccurence(valeur, tableau):
+def calcul_nombre_occurence(valeur, tableau):
     compteur = 0
     for i in range(0, len(tableau)):
         if(tableau[i] == valeur):
@@ -12,4 +12,4 @@ def calculNombreOccurence(valeur, tableau):
     return compteur
 
 
-print(calculNombreOccurence(4, exemple))
+print(calcul_nombre_occurence(4, exemple))
