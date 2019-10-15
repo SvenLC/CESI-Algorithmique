@@ -1,4 +1,4 @@
-# Ecrivez un algorithme constituant un tablea, à partir de deux tableaux de même lingueur préalablement saisis.
+# Ecrivez un algorithme constituant un tableau, à partir de deux tableaux de même longueur préalablement saisis.
 # Le nouveau tableau sera la somme des éléments des deux tableaux de départ.
 
 def somme_tableau(tableau1, tableau2):
